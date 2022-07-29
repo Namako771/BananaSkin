@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "bananaskin",
+  "version": "${version}",
+  "name": "BananaSkin",
+  "description": "Better Hud",
+  "authors": [
+    "Namako771"
+  ],
+  "license": "MIT",
+  "icon": "assets/BananaSkin/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.namako.bananaskin.BananaSkinClient"
+    ]
+  },
+  "mixins": [
+    "BananaSkin.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}

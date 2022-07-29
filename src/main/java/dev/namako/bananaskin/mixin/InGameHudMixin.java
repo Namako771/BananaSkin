@@ -25,31 +25,20 @@ public abstract class InGameHudMixin extends DrawableHelper {
     matrixStack = matrices;
     startX = scaledWidth / 2 + 10 + 9 * 8;
     startY = y - 10;
-
     float saturation = p.getHungerManager().getSaturationLevel();
     count = Math.round(saturation) / 2;
     half = Math.round(saturation) % 2 == 1;
-
-    drawFrame();
-    drawInside();
+    drawFood();
   }
 
-  private void drawFrame() {
+  private void drawFood() {
     int i;
     for(i=0;i<count;i++) {
       drawTexture(matrixStack, startX + i * -8, startY , 124, 27, 9,9);
-    }
-    if(half) {
-      drawTexture(matrixStack, startX + i * -8, startY , 124, 27, 9,9);
-    }
-  }
-
-  private void drawInside() {
-    int i;
-    for(i=0;i<count;i++) {
       drawTexture(matrixStack, startX + i * -8, startY , 52, 27, 9,9);
     }
     if(half) {
+      drawTexture(matrixStack, startX + i * -8, startY , 124, 27, 9,9);
       drawTexture(matrixStack, startX + i * -8, startY , 61, 27, 9,9);
     }
   }
